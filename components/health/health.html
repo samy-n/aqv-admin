@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health</title>
+    <link rel="stylesheet" href="./health.css" />
+  </head>
+  <body>
+    <h3>Update Health Data</h3>
+    <input
+      id="addyearbtn"
+      type="button"
+      value="Add Year"
+      onclick="csvdownload()"
+    />
+
+    <div id="addyear" hidden>
+      Year to be added :
+      <input type="text" id="healthyear" />
+      <a id="csvtemplate">Download Health template</a>
+
+      <form id="healthform" hidden>
+        <input type="file" id="files" name="files[]" accept=".csv" multiple />
+        <button type="submit" id="healthformsubmit">Submit</button>
+      </form>
+      <a href="health.html" id="fillform" hidden>Fill form for next ward</a>
+    </div>
+    <input id="deleteyearbtn" type="button" value="Delete Year" />
+
+    <div id="deleteyear" hidden>
+      Year to be deleted :
+      <form id="deletehealthform">
+        <input type="text" id="deletehealthyear" />
+        <button type="submit" id="delete">Delete</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $("#addyearbtn").click(function () {
+      $("#addyear").show();
+      $("#deleteyearbtn").hide();
+    });
+    $("#deleteyearbtn").click(function () {
+      $("#deleteyear").show();
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+  <script src="../../firebaseConfig.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../../warddoc.json"></script>
+  <script src="health.js"></script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Layer</title>
+    <link rel="stylesheet" href="./newlayer.css" />
+  </head>
+  <body>
+      <center>
+    <h3>Add new layer</h3>
+    <input
+      id="addlayerbtn"
+      type="button"
+      value="Add layer"
+      onclick="csvdownload()"
+    />
+    
+    <div id="addlayer" hidden>
+      Layer to be added :
+      <input type="text" id="newlayer" />
+      <a id="csvtemplate">Download template</a>
+
+      <form id="layerform" >
+        <input type="file" id="files" name="files[]" accept=".csv" multiple />
+        <button type="submit" id="layerformsubmit"><br />Submit</button>
+      </form>
+    </div>
+    <input id="deletelayerbtn" type="button" value="Delete Layer" />
+
+    <div id="deletelayer" hidden>
+      Layer to be deleted :
+      <form id="deletelayerform">
+        <input type="text" id="deletelayername" />
+        <button type="submit" id="delete"><br />Delete</button>
+      </form>
+    </div>
+  </body>
+</center>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $("#addlayerbtn").click(function () {
+      $("#addlayer").show();
+      $("#deletelayerbtn").hide();
+    });
+    $("#deletelayerbtn").click(function () {
+      $("#deletelayer").show();
+      $("#addlayer").hide();
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+  <script src="../../firebaseConfig.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../../warddoc.json"></script>
+  <script src="newlayer.js"></script>
+</html>

@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: linen;
+        font-family: sans-serif;
+      }
+      #editbtns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 5%;
+      }
+      button {
+        width: 25%;
+        background-color: #3399ff;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 12px;
+        size: 50%;
+      }
+      a {
+        color: aliceblue;
+        font-size: 20px;
+        text-decoration: none;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ADMIN PANEL</h1>
+    <div id="editbtns">
+      <button id="editaqv">
+        <a href="components/aqv/aqv.html">Edit AQV</a>
+      </button>
+      <button id="edithealth">
+        <a href="components/health/health.html">Edit Health</a>
+      </button>
+      <button id="editsocio">
+        <a href="components/socio/socio.html">Edit Socio Demographic</a>
+      </button>
+      <button id="addlayer">
+        <a href="components/newlayer/newlayer.html">Add/Delete new layer</a>
+      </button>
+    </div>
+  </body>
+</html>

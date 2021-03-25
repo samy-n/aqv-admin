@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>socio</title>
+    <link rel="stylesheet" href="./socio.css" />
+  </head>
+  <body>
+    <h3>Update Socio-Demographic Data</h3>
+    <input
+      id="addyearbtn"
+      type="button"
+      value="Add Year"
+      onclick="csvdownload()"
+    />
+
+    <div id="addyear" hidden>
+      Year to be added :
+      <input type="text" id="socioyear" />
+      <a id="csvtemplate">Download socio template</a>
+
+      <form id="socioform" hidden>
+        <input type="file" id="files" name="files[]" accept=".csv" multiple />
+        <button type="submit" id="socioformsubmit">Submit</button>
+      </form>
+      <a href="socio.html" id="fillform" hidden>Fill form for next ward</a>
+    </div>
+    <input id="deleteyearbtn" type="button" value="Delete Year" />
+
+    <div id="deleteyear" hidden>
+      Year to be deleted :
+      <form id="deletesocioform">
+        <input type="text" id="deletesocioyear" />
+        <button type="submit" id="delete">Delete</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $("#addyearbtn").click(function () {
+      $("#addyear").show();
+      $("#deleteyearbtn").hide();
+    });
+    $("#deleteyearbtn").click(function () {
+      $("#deleteyear").show();
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+  <script src="../../firebaseConfig.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../../warddoc.json"></script>
+  <script src="socio.js"></script>
+</html>

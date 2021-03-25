@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socio</title>
+    <link rel="stylesheet" href="./socio.css" />
+  </head>
+  <body>
+    <h3>Update Socio Demographic</h3>
+    <input id="addyearbtn" type="button" value="Add Year" />
+
+    <div id="addyear" hidden>
+      Year to be added :
+      <input type="text" id="socioyear" />
+
+      <form id="socioform" hidden>
+        <input type="text" id="ward" placeholder="Ward Name" /><br />
+        <input
+          type="number"
+          step="any"
+          id="literacy"
+          placeholder="literacy"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="literacy_female"
+          placeholder="literacy_female"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="literacy_male"
+          placeholder="literacy_male"
+        /><br />
+
+        <input
+          type="number"
+          step="any"
+          id="population"
+          placeholder="population"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="scheduled_caste"
+          placeholder="scheduled_caste"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="scheduled_tribe"
+          placeholder="scheduled_tribe"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="sex_ratio"
+          placeholder="sex_ratio"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="work_participation_male"
+          placeholder="work_participation_male"
+        /><br />
+        <input
+          type="number"
+          step="any"
+          id="work_participation_female"
+          placeholder="work_participation_female"
+        /><br />
+        <button type="submit" id="socioformsubmit"><br />Submit</button>
+      </form>
+      <a href="socio.html" id="fillform" hidden>Fill form for next ward</a>
+    </div>
+    <input id="deleteyearbtn" type="button" value="Delete Year" />
+
+    <div id="deleteyear" hidden>
+      Year to be deleted :
+      <input type="text" id="socioyear" />
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $("#addyearbtn").click(function () {
+      $("#addyear").show();
+      $("#deleteyearbtn").hide();
+    });
+    $("#deleteyearbtn").click(function () {
+      $("#deleteyear").show();
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+  <script src="../../firebaseConfig.js"></script>
+  <script src="socio.js"></script>
+</html>

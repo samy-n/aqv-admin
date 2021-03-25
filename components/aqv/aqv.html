@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./aqv.css" />
+  </head>
+  <body>
+    <h1>Update AQV</h1>
+    <!--
+      
+      <form id="aqv-update">
+        <input type="text" id="ward" placeholder="Ward Name" /><br />
+        <input type="number" step="any" id="AQI" placeholder="AQI" /><br />
+        <input type="number" step="any" id="NO2" placeholder="NO2" /><br />
+        <input type="number" step="any" id="O3" placeholder="O3" /><br />
+        <input type="number" step="any" id="PM2.5" placeholder="PM2.5" /><br />
+        <input type="number" step="any" id="PM10" placeholder="PM10" /><br />
+        <input type="number" step="any" id="SO2" placeholder="SO2" /><br />
+        <button type="submit" id="update-btn"><br />Update</button>
+      </form>
+      -->
+    <input
+      id="addaqvparambtn"
+      type="button"
+      value="Add Parameter"
+      onclick="csvdownload()"
+    />
+    <div id="addaqvparam" hidden>
+      Parameter to be added :
+      <input type="text" id="aqvparameter" />
+      <a id="csvtemplate">Download template</a>
+      <form id="addaqvparamform" hidden>
+        <input type="file" id="files" name="files[]" accept=".csv" multiple />
+        <button type="submit" id="aqvparamsubmit">Submit</button>
+      </form>
+    </div>
+    <input id="deleteaqvparambtn" type="button" value="Delete Parameter" />
+
+    <div id="deleteaqvparam" hidden>
+      Parameter to be deleted :
+      <form id="deleteaqvparamform">
+        <input type="text" id="deleteparam" />
+        <button type="submit" id="delete">Delete</button>
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $("#addaqvparambtn").click(function () {
+      $("#addaqvparam").show();
+      $("#deleteaqvparambtn").hide();
+    });
+    $("#deleteaqvparambtn").click(function () {
+      $("#deleteaqvparam").show();
+    });
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-storage.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="../../firebaseConfig.js"></script>
+  <script src="aqv.js"></script>
+</html>
